@@ -12,7 +12,7 @@
 
 - [3.2.3 props 기본 값 설정 defaultProps](#323-props-기본-값-설정-defaultprops)
 
-- [3.2.4 props 검증: propTypes](#324-props-검증:-proptypes)
+- [3.2.4 props 검증: propTypes](#324-props-검증-proptypes)
 
     - [3.2.4.1 필수 propTypes 설정](#3241-필수-proptypes-설정)
 
@@ -349,7 +349,7 @@ render() {
 
 리액트의 이벤트 시스템은 4장에서 자세히 알아볼 것입니다.
 
-> #####TIP : 화살표 함수(ES6)
+> ##### TIP : 화살표 함수(ES6)
 > 
 > 함수를 표현하는 새로운 방식이며, 기존 function을 이용한 방식을 대체하기보다는 각각 맞는 상황에 사용합니다.
 > 

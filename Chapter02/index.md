@@ -43,7 +43,7 @@ var Component = React.Component;
 
 `'react'`가 `React` 변수에 할당되고, `{Component}`는 해체 할당을 통해 `Component` 클래스를 로드한 것을 볼 수 있다.
 
-> #####TIP : 해체 할당(ES6)
+> ##### TIP : 해체 할당(ES6)
 > 
 > ```javascript
 > const obj = {a:1,b:2,c:3};
@@ -92,7 +92,7 @@ class App extends Component {
  
 이런 코드를 __JSX__ 라 합니다.
 
-> #####TIP : 클래스 문법(ES6)
+> ##### TIP : 클래스 문법(ES6)
 > 
 > ES6 이전에는 클래스를 구현하려면 prototype 이라는 문법을 사용하여 대신 작업해야 했습니다.
 > 
@@ -169,7 +169,7 @@ var a = React.createElement(
 
 - 더욱 높은 활용도 : div나 span 같은 HTML 태그를 사용할 뿐만 아니라 컴포넌트도 JSX 안에서 작성할 수 있습니다.
 
-> #####TIP : ReactDOM.render란?
+> ##### TIP : ReactDOM.render란?
 > 
 > 컴포넌트를 페이지에 렌더링하는 역할을 하며 `react-dom`을 불러와 사용할 수 있습니다.
 > 
@@ -228,7 +228,7 @@ class App extends Component {
 export default App;
 ```
 
-> #####TIP : const와 let(ES6)
+> ##### TIP : const와 let(ES6)
 > 
 > const : 한번 지정하고 나면 변경이 불가능한 상수를 선언할 때 사용하는 키워드
 > 
