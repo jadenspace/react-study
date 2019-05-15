@@ -1,32 +1,32 @@
 # 3장 컴포넌트
 
-- 목차
+: 목차
 
 [3.1 첫 컴포넌트 생성](#31-첫-컴포넌트-생성) 
 
 [3.2 props](#32-props) 
 
-- [3.2.1 JSX 내부에서 props 렌더링](#321-JSX-내부에서-props-렌더링)
+- [3.2.1 JSX 내부에서 props 렌더링](#321-jsx-내부에서-props-렌더링)
 
 - [3.2.2 컴포넌트 사용할 때 props 값 설정](#322-컴포넌트-사용할-때-props-값-설정)
 
-- [3.2.3 props 기본 값 설정 defaultProps](#323-props-기본-값-설정-defaultProps)
+- [3.2.3 props 기본 값 설정 defaultProps](#323-props-기본-값-설정-defaultprops)
 
-- [3.2.4 props 검증: propTypes](#324-props-검증:-propTypes)
+- [3.2.4 props 검증: propTypes](#324-props-검증:-proptypes)
 
-    - [3.2.4.1 필수 propTypes 설정](#3241-필수-propTypes-설정)
+    - [3.2.4.1 필수 propTypes 설정](#3241-필수-proptypes-설정)
 
-    - [3.2.4.2 더 많은 PropTypes 종류](#3242-더-많은-PropTypes-종류)
+    - [3.2.4.2 더 많은 PropTypes 종류](#3242-더-많은-proptypes-종류)
 
 [3.3 state](#33-state)
 
-- [3.3.1 컴포넌트의 생성자 메서드: constructor()](#331-컴포넌트의-생성자-메서드:-constructor())
+- [3.3.1 컴포넌트의 생성자 메서드: constructor()](#331-컴포넌트의-생성자-메서드-constructor)
 
 - [3.3.2 state 초깃값 설정](#332-state-초깃값-설정)
 
-- [3.3.3 JSX 내부에서 state 렌더링](#333-JSX-내부에서-state-렌더링)
+- [3.3.3 JSX 내부에서 state 렌더링](#333-jsx-내부에서-state-렌더링)
 
-- [3.3.4 state 값 업데이트: setState()](#334-state-값-업데이트:-setState())
+- [3.3.4 state 값 업데이트: setState()](#334-state-값-업데이트-setstate)
 
 - [3.3.5 state를 constructor에서 꺼내기](#335-state를-constructor에서-꺼내기)
 
@@ -73,7 +73,7 @@ export default App;
 
 ## 3.2 props
 
-properties를 줄인 표현으로 __컴포넌트 속성을 설정할 때 사용하는 요소__ 입니다.
+props는 properties를 줄인 표현으로 __컴포넌트 속성을 설정할 때 사용하는 요소__ 입니다.
 
 해당 컴포넌트를 불러와 사용하는 부모 컴포넌트에서만 props 값을 설정할 수 있습니다.
 
@@ -136,7 +136,9 @@ MyComponent.defaultProps = {
 export default MyComponent;
 ```
 
-또 다른 방법으로 클래스 내부에서 정의하는 것이 있는데 ES6 stage-2에서 소개한 transform-class-properties 문법으로 사용 가능합니다. `create-react-app`으로 만든 프로젝트는 이 문법을 적용하기 때문에 별도 작업은 없습니다.
+또 다른 방법으로 클래스 내부에서 정의하는 것이 있는데 ES6 stage-2에서 소개한 `transform-class-properties` 문법으로 사용 가능합니다.
+
+`create-react-app`으로 만든 프로젝트는 이 문법을 적용하기 때문에 별도 작업은 없습니다.
 
 ```javascript
 import React, { Component } from 'react';
@@ -165,7 +167,7 @@ export default MyComponent;
 
 `import PropTypes from 'prop-types';`
 
-그 이후에는 클래스 밖에서 설정하거나 transform-class-properties 문법을 사용해서 설정합니다.
+그 이후에는 클래스 밖에서 설정하거나 `transform-class-properties` 문법을 사용해서 설정합니다.
 ```javascript
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -289,7 +291,9 @@ export default MyComponent;
 
 MyComponent 클래스의 constructor 메서드를 만들어 주지 않으면 Component 클래스의 생성자 메서드를 그대로 사용합니다.
 
-직접 constructor 메서드를 작성하여 생성자 메서드에서 추가 작업을 하려면 메서드 내부에서 부모 클래스인 Component의 constructor 메서드를 먼저 호출해야합니다. 이때 `super` 키워드를 사용합니다.
+직접 constructor 메서드를 작성하여 생성자 메서드에서 추가 작업을 하려면 메서드 내부에서 부모 클래스인 Component의 constructor 메서드를 먼저 호출해야합니다.
+ 
+이때 `super` 키워드를 사용합니다.
 
 컴포넌트를 만들 때 props 값들을 사용하므로 props를 메서드의 파라미터로 전달합니다.
 
@@ -345,7 +349,7 @@ render() {
 
 리액트의 이벤트 시스템은 4장에서 자세히 알아볼 것입니다.
 
-> - TIP : 화살표 함수(ES6)
+> #####TIP : 화살표 함수(ES6)
 > 
 > 함수를 표현하는 새로운 방식이며, 기존 function을 이용한 방식을 대체하기보다는 각각 맞는 상황에 사용합니다.
 > 
@@ -373,7 +377,7 @@ render() {
 
 ### 3.3.5 state를 constructor에서 꺼내기
 
-초기 state는 constructor 메서드에서 정의해야 하지만, defaultPProps와 propTypes를 정의할 때 사용한 `transform-class-properties` 문법으로 바깥에 정의할 수 있습니다.
+초기 state는 constructor 메서드에서 정의해야 하지만, defaultProps와 propTypes를 정의할 때 사용한 `transform-class-properties` 문법으로 바깥에 정의할 수 있습니다.
 
 ```javascript
 import React, { Component } from 'react';
@@ -403,7 +407,7 @@ export default MyComponent;
 
 ### 3.3.6 state 값을 업데이트할 때 주의 사항
 
-state 값을 업데이트할 때는 .setState로만 업데이트 해야 합니다. 다음은 잘못된 코드입니다.
+`state` 값을 업데이트할 때는 `.setState`로만 업데이트 해야 합니다. 다음은 잘못된 코드입니다.
 
 ```javascript
 this.state.number = this.state.number + 1;

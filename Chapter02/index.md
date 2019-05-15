@@ -1,14 +1,14 @@
 # 2장 JSX
 
-- 목차
+: 목차
 
 [2.1 코드 이해](#21-코드-이해) 
 
-[2.2 JSX란?](#22-JSX란?) 
+[2.2 JSX란?](#22-jsx란) 
 
-[2.3 JSX 장점](#23-JSX-장점)
+[2.3 JSX 장점](#23-jsx-장점)
 
-[2.4 JSX 문법](#24-JSX-문법) 
+[2.4 JSX 문법](#24-jsx-문법) 
 
 - [2.4.1 감싸인 요소](#241-감싸인-요소) 
 
@@ -16,11 +16,11 @@
 
 - [2.4.3 if 문 대신 조건부 연산자](#243-if-문-대신-조건부-연산자) 
 
-- [2.4.4 &&를 사용한 조건부 렌더링](#244-&&를-사용한-조건부-렌더링) 
+- [2.4.4 &&를 사용한 조건부 렌더링](#244-를-사용한-조건부-렌더링) 
 
 - [2.4.5 인라인 스타일링](#245-인라인-스타일링) 
 
-- [2.4.6 class 대신 className](#246-class-대신-className) 
+- [2.4.6 class 대신 className](#246-class-대신-classname) 
 
 - [2.4.7 꼭 닫아야 하는 태그](#247-꼭-닫아야-하는-태그) 
 
@@ -43,7 +43,8 @@ var Component = React.Component;
 
 `'react'`가 `React` 변수에 할당되고, `{Component}`는 해체 할당을 통해 `Component` 클래스를 로드한 것을 볼 수 있다.
 
-> - TIP : 해체 할당(ES6)
+> #####TIP : 해체 할당(ES6)
+> 
 > ```javascript
 > const obj = {a:1,b:2,c:3};
 > let {a,b,c} = obj;
@@ -55,9 +56,9 @@ var Component = React.Component;
 
 이렇게 파일을 모듈화해서 사용하는 것은 Node.js의 기능이며, 웹 브라우저에서 이와 같은 기능을 수행하기 위해서는 __번들링__ 도구를 이용하는 것입니다.
 
-번들링 도구로는 Browserify, RequireJS, webpack 등이 대표적이며, 이를 통해 require(또는 import)로 모듈을 불러왔을 때 번들링되면서 모듈들을 파일 하나로 합쳐줍니다.
+번들링 도구로는 `Browserify`, `RequireJS`, `webpack` 등이 대표적이며, 이를 통해 `require(또는 import)`로 모듈을 불러왔을 때 번들링되면서 모듈들을 파일 하나로 합쳐줍니다.
 
-_이와 같은 설정은 15장에서 다루고 현재는 create-react-app 으로 대신합니다._
+_이와 같은 설정은 15장에서 다루고 현재는 `create-react-app` 으로 대신합니다._
 
 다음은 App.js 코드를 확인해 보겠습니다.
 
@@ -85,13 +86,13 @@ class App extends Component {
   }
 }
 ```
-해당 App 클래스 내에 render() 함수 내부에서는 컴포넌트를 유저에게 어떻게 보일지 return 합니다.
+해당 App 클래스 내에 render() 함수 내부에서는 컴포넌트를 유저에게 어떻게 보일지 `return` 합니다.
 
 이 내부를 보면 HTML과 비슷한데 작은따옴표나 큰따옴표로 감싸지 않은 것으로 보아 이 코드는 단순한 문자열 템플릿이 아닙니다.
  
-이런 코드를 JSX라 합니다.
+이런 코드를 __JSX__ 라 합니다.
 
-> - TIP : 클래스 문법(ES6)
+> #####TIP : 클래스 문법(ES6)
 > 
 > ES6 이전에는 클래스를 구현하려면 prototype 이라는 문법을 사용하여 대신 작업해야 했습니다.
 > 
@@ -108,7 +109,7 @@ class App extends Component {
 > >> 검둥이: 멍멍
 > ```
 > 
-> ES6 문법부터는 이것과 기능이 똑같은 코드를 class를 사용하여 작성할 수 있습니다.
+> ES6 문법부터는 이것과 기능이 똑같은 코드를 `class`를 사용하여 작성할 수 있습니다.
 > 
 > ```javascript
 > class Dog {
@@ -127,7 +128,7 @@ class App extends Component {
  
 ## 2.2 JSX란?
 
-자바스크립트의 확장 문법으로 해당 코드는 나중에 번들링되면서 babel-loader를 사용하여 자바스크립트로 변환합니다.
+자바스크립트의 확장 문법으로 해당 코드는 나중에 번들링되면서 `babel-loader` 를 사용하여 자바스크립트로 변환합니다.
 
 ```javascript
 var a = (
@@ -168,7 +169,7 @@ var a = React.createElement(
 
 - 더욱 높은 활용도 : div나 span 같은 HTML 태그를 사용할 뿐만 아니라 컴포넌트도 JSX 안에서 작성할 수 있습니다.
 
-> - TIP : ReactDOM.render란?
+> #####TIP : ReactDOM.render란?
 > 
 > 컴포넌트를 페이지에 렌더링하는 역할을 하며 `react-dom`을 불러와 사용할 수 있습니다.
 > 
@@ -227,9 +228,10 @@ class App extends Component {
 export default App;
 ```
 
-> - TIP : const와 let(ES6)
+> #####TIP : const와 let(ES6)
 > 
-> const : 한번 지정하고 나면 ㅂ녀경이 불가능한 상수를 선언할 때 사용하는 키워드
+> const : 한번 지정하고 나면 변경이 불가능한 상수를 선언할 때 사용하는 키워드
+> 
 > let : 동적인 값을 담을 수 있는 변수를 선언할 때 사용하는 키워드
 > 
 > 기존 var 키워드는 scope(해당 값을 사용할 수 있는 코드 영역)이 함수 단위입니다.
@@ -282,7 +284,7 @@ JSX 에서는 null, false 등 값을 렌더링하면 아무것도 나타나지 �
 
 DOM 요소에 스타일을 적용할 때는 자바스크립트 객체 형식으로 만들어 적용해야 합니다.
 
-해당 객체의 key는 __camelCase로 작성__ 합니다.
+해당 __객체의 key는 camelCase로 작성__ 합니다.
 
 ```javascript
 const style = {
@@ -296,7 +298,7 @@ const style = {
 }
 ```
 
-위처럼 웹 브라우저 접두어인 -moz, -webkit 등은 Moz, Webkit 으로 바꾸어 사용하되, -ms는 예외로 대문자로 바꾸지 않고 소문자 ms로 작성합니다.
+위처럼 웹 브라우저 접두어인 __-moz, -webkit 등은 Moz, Webkit 으로 바꾸어 사용하되, -ms는 예외로 대문자로 바꾸지 않고 소문자 ms로 작성__ 합니다.
 
 ### 2.4.6 class 대신 className 
 
@@ -317,7 +319,7 @@ class App extends Component {
 
 ### 2.4.7 꼭 닫아야 하는 태그 
 
-input, br 처럼 닫지 않아도 되었던 태그들은 JSX에서는 무조건 닫아야 합니다.
+input, br 처럼 닫지 않아도 되었던 태그들은 JSX에서는 __무조건 닫아야 합니다.__
 
 ```html
 <form>
@@ -347,6 +349,6 @@ return (
     </div>
 );
 ```
-일반적으로 주석을 작성할 시 `{ /* 내용 */ }` 으로 작성합니다.
+일반적으로 __주석을 작성할 시 `{ /* 내용 */ }` 으로 작성__ 합니다.
 
 self-closed 요소(`<div></div>` 가 아닌 `<div/>`처럼 자체적으로 닫는 요소를 의미) 내에서는 주석을 `{ }` 없이 작성할 수 있습니다.
